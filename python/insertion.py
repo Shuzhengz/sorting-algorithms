@@ -1,15 +1,15 @@
 # Sorts the array passed in as an argument, modifies it
 def sort(arr):
-	for i in range(len(arr)):
-		minimumIndex = i;
+	for i in range(1, len(arr)):
+		value = arr[i]
+		j = i - 1
 
-		for j in range(i + 1, len(arr)):
-			if (arr[j] < arr[minimumIndex]):
-				minimumIndex = j
+		while (j >= 0 and arr[j] > value):
+			arr[j + 1] = arr[j];
+			j = j - 1;
 
-		temp = arr[minimumIndex];
-		arr[minimumIndex] = arr[i];
-		arr[i] = temp;
+		arr[j + 1] = value
+
 
 # Declares an example array and sorts it
 example = [ 9, 7, 3, 7, 1, 3, 0, 8 ]
